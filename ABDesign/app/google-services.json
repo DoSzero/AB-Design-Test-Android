@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "526911440098",
+    "firebase_url": "https://abtesting-f2799-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "abtesting-f2799",
+    "storage_bucket": "abtesting-f2799.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526911440098:android:4b61897844a14cb682cabb",
+        "android_client_info": {
+          "package_name": "com.dos.ua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526911440098-fl4q1eg6o5e7lppbi2mri8chnig0k7jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrxJozFlmS7FBD7M7k-lJUeyEHKpNUU6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526911440098-fl4q1eg6o5e7lppbi2mri8chnig0k7jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
