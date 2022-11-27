@@ -5,8 +5,6 @@
         <variable
             name="isDesign"
             type="com.dos.ua.model.DesignData" />
-
-
     </data>
 
     <androidx.cardview.widget.CardView
@@ -29,10 +27,10 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/animalImg"
+                    android:id="@+id/designLogo"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:imageUrl="@{isDesign.img}"
+                    android:imageUrl="@{isDesign.imgA}"
                     android:scaleType="centerCrop" />
 
                 <LinearLayout
@@ -42,25 +40,25 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/animalName"
+                        android:id="@+id/designName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:text="@{isDesign.name}"
+                        android:text="@{isDesign.nameA}"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold|normal" />
 
                     <TextView
-                        android:id="@+id/animalInfo"
+                        android:id="@+id/designInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:text="@{isDesign.info}"
+                        android:text="@{isDesign.infoA}"
                         android:textColor="@android:color/darker_gray"
                         android:textSize="15sp"
                         android:textStyle="bold|normal" />
@@ -72,8 +70,6 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 </layout>

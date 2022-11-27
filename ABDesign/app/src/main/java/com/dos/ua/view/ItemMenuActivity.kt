@@ -1,15 +1,17 @@
 package com.dos.ua.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dos.ua.R
-import com.dos.ua.uitel.getProgressDrawable
-import com.dos.ua.uitel.loadImage
+import com.dos.ua.utiles.DialogUtiles
+import com.dos.ua.utiles.getProgressDrawable
+import com.dos.ua.utiles.loadImage
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_itemmenu.*
 
 
-class ItemMenuActivity : AppCompatActivity() {
+class ItemMenuActivity : AppCompatActivity(), DialogUtiles.ExampleDialogListener {
 
     private lateinit var mDataBase: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,31 +21,27 @@ class ItemMenuActivity : AppCompatActivity() {
         /**get Data*/
         val designInfoIntent = intent
 
-        val designName = designInfoIntent.getStringExtra("name")
-        val designInfo = designInfoIntent.getStringExtra("info")
-        val designImg = designInfoIntent.getStringExtra("img")
+        val designNameA = designInfoIntent.getStringExtra("nameA")
+        val designInfoA = designInfoIntent.getStringExtra("infoA")
+        val designImgA = designInfoIntent.getStringExtra("imgA")
 
-        /**call text and images*/
-        name.text = designName
-        info.text = designInfo
-        img.loadImage(designImg, getProgressDrawable(this))
+        val designNameB = designInfoIntent.getStringExtra("nameB")
+        val designInfoB = designInfoIntent.getStringExtra("infoB")
+        val designImgB = designInfoIntent.getStringExtra("imgB")
 
-//        btn_yes.setOnClickListener {
-//            val mRootRef = FirebaseDatabase.getInstance().getReference("Design")
-//            val mCounterRef = mRootRef.child("like")
-//
-//            mCounterRef.addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                    dataSnapshot.child("Design")
-//                    var count =  dataSnapshot.child("Design").value as Long
-//                    mCounterRef.child("like").setValue(++count)
-//                }
-//
-//                override fun onCancelled(databaseError: DatabaseError) {
-//                    throw databaseError.toException()
-//                }
-//            })
-//        }
+        //all text and images
+        nameA.text = designNameA
+        infoA.text = designInfoA
+        imgA.loadImage(designImgA, getProgressDrawable(this))
+
+        nameB.text = designNameB
+        infoB.text = designInfoB
+        imgB.loadImage(designImgB, getProgressDrawable(this))
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
 
             // TODO ++ --- // Working but different path
 //        btn_yes.setOnClickListener {
@@ -61,25 +59,14 @@ class ItemMenuActivity : AppCompatActivity() {
 //                }
 //            })
 //        }
-
-        //TODO dislike
-//        btn_no.setOnClickListener {
-//            val mRootRef = FirebaseDatabase.getInstance().reference
-//            val mCounterRef = mRootRef.child("Design")
-//
-//            mCounterRef.addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                    var count = dataSnapshot.child("/Design/01/dislike").value as Long
-//                    mCounterRef.child("/Design/01/dislike").setValue(--count)
-//                }
-//
-//                override fun onCancelled(databaseError: DatabaseError) {
-//                    throw databaseError.toException()
-//                }
-//            })
-//        }
-
-
     }
-    /**ok now run it */
+
+    private fun openDialog() {
+        val dialog = DialogUtiles()
+        dialog.show(supportFragmentManager, "Dialog")
+    }
+
+    override fun onYesClicked() {
+    }
+
 }

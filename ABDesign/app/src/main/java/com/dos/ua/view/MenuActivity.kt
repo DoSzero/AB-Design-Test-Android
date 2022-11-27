@@ -34,11 +34,10 @@ class MenuActivity : AppCompatActivity() {
         mDataBase.addValueEventListener(object :ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
-               if (snapshot.exists()){
+               if (snapshot.exists()) {
                    for (designSnapshot in snapshot.children){
                        val design = designSnapshot.getValue(DesignData::class.java)
                        designList.add(design!!)
-
                    }
                    recyclerDesign.adapter = mAdapter
                }

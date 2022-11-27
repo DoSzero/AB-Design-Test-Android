@@ -31,16 +31,32 @@ class DesignAdapter(var c:Context, var designList:ArrayList<DesignData>)
         holder.v.isDesign = designList[position]
         holder.v.root.setOnClickListener {
 
-            val img = newList.img
-            val name = newList.name
-            val info = newList.info
+//            val imgMain = newList.imgMain
+//            val nameMain = newList.nameMain
+//            val infoMain = newList.infoMain
+
+            val imgA = newList.imgA
+            val nameA = newList.nameA
+            val infoA = newList.infoA
+
+            val imgB = newList.imgB
+            val nameB = newList.nameB
+            val infoB = newList.infoB
 
             // set Data
             val mIntent = Intent(c, ItemMenuActivity::class.java)
 
-            mIntent.putExtra("img",img)
-            mIntent.putExtra("name",name)
-            mIntent.putExtra("info",info)
+//            mIntent.putExtra("imgLogo",imgMain)
+//            mIntent.putExtra("nameLogo",nameMain)
+//            mIntent.putExtra("infoLogo",infoMain)
+
+            mIntent.putExtra("imgA",imgA)
+            mIntent.putExtra("nameA",nameA)
+            mIntent.putExtra("infoA",infoA)
+
+            mIntent.putExtra("imgB",imgB)
+            mIntent.putExtra("nameB",nameB)
+            mIntent.putExtra("infoB",infoB)
 
             c.startActivity(mIntent)
         }
